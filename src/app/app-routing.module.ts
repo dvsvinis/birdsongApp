@@ -1,15 +1,14 @@
-import { BirdDetailsComponent } from './bird-details/bird-details.component';
-import { CreateBirdComponent } from './create-bird/create-bird.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { BirdComponent } from './bird/bird.component';
 import { BirdListComponent } from './bird-list/bird-list.component';
-
+import { BirdFormComponent } from './bird-form/bird-form.component';
 
 const routes: Routes = [
-{ path: '', redirectTo: 'bird', pathMatch: 'full' },
+{ path: '', component: BirdComponent },
 { path: 'birds', component: BirdListComponent },
-{ path: 'add', component: CreateBirdComponent },
-{ path: 'details/:id', component: BirdDetailsComponent },];
+  { path: 'addbird', component: BirdFormComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

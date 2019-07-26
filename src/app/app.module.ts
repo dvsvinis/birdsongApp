@@ -3,17 +3,18 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CreateBirdComponent } from './create-bird/create-bird.component';
-import { BirdDetailsComponent } from './bird-details/bird-details.component';
-import { BirdListComponent } from './bird-list/bird-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BirdComponent } from './bird/bird.component';
+import { BirdListComponent } from './bird-list/bird-list.component';
+import { BirdFormComponent } from './bird-form/bird-form.component';
+import { BirdService } from './service/bird-service.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateBirdComponent,
-    BirdDetailsComponent,
-    BirdListComponent
+     BirdComponent,
+     BirdListComponent,
+     BirdFormComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [BirdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,17 @@
+<table border="1">
+  <thead></thead>
+  <tr>
+    <th>Name</th>
+    <th>Image</th>
+    <th>Song</th>
+    </tr>
+
+  <tbody>
+      <tr *ngFor="let bird of birds">
+          <td>{{bird.name}}</td>
+          <td>{{bird.image}}</td>
+          <td>{{bird.song1}}</td>
+          <td><button class="btn btn-danger" (click)="deleteBird(bird)"> Delete Bird</button></td>
+          </tr>
+  </tbody>
+    </table>
