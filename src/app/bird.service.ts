@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BirdService {
-  private baseUrl = 'http://localhost:8080/birdsongs/api/v1/birds';
+  private baseUrl = 'http://localhost:8080/birdsongs/birds';
 
   constructor(private http: HttpClient) { }
 
