@@ -1,25 +1,21 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h2>Bird List</h2>
-  </div>
-  <div class="panel-body">
-    <table class="table table-striped">
-      <thead>
+
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
         <tr>
-          <th>Bird Name</th>
-          <th>Bird Image</th>
-          <th>Bird Song</th>
-          <th>Actions</th>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Image</th>
+          <th scope="col">Song</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let bird of birds | async">
-          <td>{{bird.name}}</td>
-          <td>{{bird.image}}</td>
-          <td>{{bird.song1}}</td>
-          <td><button (click)="deleteBird(bird.id)" class="btn btn-danger">Delete</button>
-              <button (click)="birdDetails(bird.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
-          </td>
+        <tr *ngFor="let bird of birds">
+          <td>{{ bird.id }}</td>
+          <td>{{ bird.name }}</td>
+          <td>{{ bird.image }}</td>
+          <td>{{ bird.song1 }}</td>
         </tr>
       </tbody>
     </table>
