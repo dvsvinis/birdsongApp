@@ -7,10 +7,11 @@ import { LogoutComponent } from './logout/logout.component';
 import { AuthGoodService } from './service/auth-good.service';
 
 const routes: Routes = [
-  { path: '', component: BirdComponent, canActivate: [AuthGoodService] },
-  { path: 'addbird', component: AddBirdComponent, canActivate: [AuthGoodService]},
-  { path: 'login', component: LoginComponent },
-  { path: 'logout', component: LogoutComponent, canActivate: [AuthGoodService] },
+  { path: '', component: BirdComponent},
+  // { path: 'login', component: LoginComponent },
+  // { path: '', component: BirdComponent, canActivate: [AuthGoodService] },
+  // { path: 'addbird', component: AddBirdComponent, canActivate: [AuthGoodService]},
+  // { path: 'logout', component: LogoutComponent, canActivate: [AuthGoodService] }
 ];
 
 @NgModule({

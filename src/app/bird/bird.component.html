@@ -1,17 +1,28 @@
-<table border="1">
-  <thead></thead>
-  <tr>
-    <th>Name</th>
-    <th>Image</th>
-    <th>Song</th>
-    </tr>
+<div><h3>Identify these bird songs: </h3></div>
 
-  <tbody>
-      <tr *ngFor="let bird of birds">
-          <td>{{bird.name}}</td>
-          <td>{{bird.image}}</td>
-          <td>{{bird.song1}}</td>
-          <td><button class="btn btn-danger" (click)="deleteBird(bird)"> Delete Bird</button></td>
+  <audio controls>
+    <source src="https://www.allaboutbirds.org/guide/assets/sound/523097.mp3" type="audio/mpeg" />
+      update your browser if you can see this and want to hear birdsongs
+  </audio>
+
+    <!-- <div class='table-responsive'>
+      <table class='table'
+      *ngIf='quiz && quiz.length'></table>
+        <thead>
+          <tr>
+            <th> -->
+              <!-- <button class='btn btn-primary'
+                      (click)='toggleImage()'>
+                {{image? 'Hide' : 'Show'}} Image
+              </button>
+            </th>
+            <th>Name</th>
+            <th>Song</th>
           </tr>
-  </tbody>
-    </table>
+
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div> -->
+

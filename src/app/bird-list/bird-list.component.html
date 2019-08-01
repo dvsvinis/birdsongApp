@@ -1,5 +1,24 @@
+<table border="1">
+  <thead></thead>
+  <tr>
+    <th>Name</th>
+    <th>Image</th>
+    <th>Song</th>
+    </tr>
 
-<div class="card my-5">
+  <tbody>
+      <tr *ngFor="let bird of birds">
+          <td>{{bird.name}}</td>
+          <td>{{bird.image}}</td>
+          <td>{{bird.song1}}</td>
+          <td><button class="btn btn-danger" (click)="deleteBird(bird)"> Delete Bird</button></td>
+          </tr>
+  </tbody>
+    </table>
+
+
+<!--
+  <div class="card my-5">
   <div class="card-body">
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
@@ -20,4 +39,4 @@
       </tbody>
     </table>
   </div>
-</div>
+</div> -->

@@ -18,8 +18,8 @@ export class HttpClientService {
   constructor(private httpClient: HttpClient) { }
 
   getBirds() {
-    console.log('test bird call');
-    return this.httpClient.get<Bird[]>('http://localhost:8080/birds');
+    console.log('get bird list');
+    return this.httpClient.get<Bird[]>('http://localhost:8080/birdlist');
   }
 
   public deleteBird(bird) {
