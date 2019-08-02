@@ -1,6 +1,9 @@
+
+
 import { Component} from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
-
+import { Bird } from '../bird';
+import { BirdService } from '../service/bird-service.service';
 
 @Component({
   selector: 'app-dragdrop',
@@ -9,45 +12,25 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 })
 export class DragdropComponent{
 Items = [];
+// birds: Bird[];
+//   constructor(private birdService: BirdService) { }
 
-  birdimages = [
-    'image1',
-    'image2',
-    'image3'
-  ];
-
-  activeList = ['Answers'];
-
-  birdnames = [
-    'Cardinal',
-    'Chicadee',
-    'American Robin'
-  ];
+DropList = ['Bird1', 'Bird2', 'Bird3', 'Bird4', 'Bird5'];
 
   constructor() {
     this.initializeItems();
   }
 
-  ngOnInit() {}
-
-initializeItems() {
-  this.Items = [];
-  for (let index = 0; index < 100; index++) {
-    this.Items.push(index);
-  }
-}
-
-  drop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      // drop within the same list
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      // drop to a different list
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex);
+  initializeItems() {
+    this.Items = [];
+    for (let index = 0; index < 11; index++) {
+      this.Items.push(index);
     }
   }
+
+  onDrop(event){
+    console.log(event);
+    moveItemInArray(this.DropList, event.previousIndex, event.currentIndex);
+  }
+
 }

@@ -1,33 +1,24 @@
 <div class="container">
     <div class="panel panel-primary">
         <div class="panel-body">
-          Drag and drop:
+          <h2>Bird Songs</h2>
       </div>
 
-<cdk-virtual-scroll-viewport itemSize="10">
-  <div *cdkVirtualFor="let item of Items">{{item}}</div>
+
+<cdk-virtual-scroll-viewport itemSize="10" class="scrolling-example">
+  <div *cdkVirtualFor="let item of Items" class="item">{{item}}</div>
 </cdk-virtual-scroll-viewport>
 
-<!-- <div class="drag-container">
-  <h3>Bird Names</h3>
-  <div>
 
-  </div>
+<hr>
+<h5>Drag and Drop</h5>
 
+<div class="box" cdkDrag>
+Cardinal
 </div>
 
-<div class="drag-container">
-    <h3>Bird Images</h3>
-    <div>
+<div cdkDropList></div>
 
-    </div>
-
-  </div>
-
-  <div class="drag-container">
-      <h3>Answers</h3>
-      <div>
-
-      </div>
-
-    </div> -->
+<div cdkDropList (cdkDropListDropped)="onDrop($event)">
+  <div class="box" *ngFor="let item of DropList" cdkDrag>{{item}}</div>
+</div>
