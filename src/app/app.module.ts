@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +13,8 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AddBirdComponent } from './add-bird/add-bird.component';
+import { DragdropComponent } from './dragdrop/dragdrop.component';
+import { QuizComponent } from './quiz/quiz.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +26,16 @@ import { AddBirdComponent } from './add-bird/add-bird.component';
      LoginComponent,
      LogoutComponent,
      AddBirdComponent,
+     DragdropComponent,
+     QuizComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DragDropModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
