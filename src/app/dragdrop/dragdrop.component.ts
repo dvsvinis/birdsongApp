@@ -12,8 +12,7 @@ import { BirdService } from '../service/bird-service.service';
 })
 export class DragdropComponent{
 Items = [];
-// birds: Bird[];
-//   constructor(private birdService: BirdService) { }
+
 
 DropList = ['Bird1', 'Bird2', 'Bird3', 'Bird4', 'Bird5'];
 

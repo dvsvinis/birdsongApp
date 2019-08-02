@@ -15,6 +15,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { AddBirdComponent } from './add-bird/add-bird.component';
 import { DragdropComponent } from './dragdrop/dragdrop.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { BirdService } from './service/bird-service.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { QuizComponent } from './quiz/quiz.component';
     DragDropModule,
     ScrollingModule
   ],
-  providers: [],
+  providers: [BirdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

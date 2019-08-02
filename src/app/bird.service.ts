@@ -7,12 +7,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BirdService {
-  private baseUrl = 'http://localhost:8080/birdsongs/birds';
+  // private baseUrl = 'http://localhost:8080/birdsongs/birds';
+  private baseUrl = 'http://localhost:8080/';
 
   constructor(private http: HttpClient) { }
 
   getBird(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${id}`);
+    return this.http.get(`${this.baseUrl}/birds/${id}`);
   }
 
   createBird(bird: Object): Observable<Object> {
@@ -27,8 +28,8 @@ export class BirdService {
     return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
   }
 
-  getBirdsList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
+  findAll(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/birdlist`);
   }
 
 }

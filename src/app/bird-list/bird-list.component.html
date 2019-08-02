@@ -1,42 +1,27 @@
-<table border="1">
+<div class="container">
+  <div class="panel panel-primary">
+      <div class="panel-body">
+        <h2>Bird Songs</h2>
+    </div>
+
+    <!-- <table border="1">
   <thead></thead>
-  <tr>
+ <tr>
     <th>Name</th>
     <th>Image</th>
     <th>Song</th>
     </tr>
 
-  <tbody>
+<tbody>
       <tr *ngFor="let bird of birds">
-          <td>{{bird.name}}</td>
+          <!-- <td>{{bird.name}}</td>
           <td>{{bird.image}}</td>
           <td>{{bird.song1}}</td>
-          <td><button class="btn btn-danger" (click)="deleteBird(bird)"> Delete Bird</button></td>
-          </tr>
+           </tr>
   </tbody>
-    </table>
+    </table>-->
 
+    <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-example">
+      <div *cdkVirtualFor="let bird of birds" class="item">{{bird.name}}</div>
+    </cdk-virtual-scroll-viewport>
 
-<!--
-  <div class="card my-5">
-  <div class="card-body">
-    <table class="table table-bordered table-striped">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Image</th>
-          <th scope="col">Song</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let bird of birds">
-          <td>{{ bird.id }}</td>
-          <td>{{ bird.name }}</td>
-          <td>{{ bird.image }}</td>
-          <td>{{ bird.song1 }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div> -->

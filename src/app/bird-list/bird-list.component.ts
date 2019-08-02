@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Bird } from '../bird';
 import { BirdService } from '../service/bird-service.service';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-bird-list',
@@ -16,5 +17,6 @@ export class BirdListComponent implements OnInit {
       this.birds = data;
     });
   }
+
 
 }
