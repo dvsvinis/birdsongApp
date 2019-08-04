@@ -4,24 +4,63 @@
         <h2>Bird Songs</h2>
     </div>
 
-    <!-- <table border="1">
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+
+   <table border="1">
   <thead></thead>
  <tr>
-    <th>Name</th>
-    <th>Image</th>
     <th>Song</th>
+    <th>Image</th>
     </tr>
 
 <tbody>
       <tr *ngFor="let bird of birds">
-          <!-- <td>{{bird.name}}</td>
-          <td>{{bird.image}}</td>
-          <td>{{bird.song1}}</td>
+          <td><audio controls>
+            <source src={{bird.song1}} type="audio/mpeg" />
+              update your browser if you can see this and want to hear birdsongs
+          </audio></td>
+          <td></td>
+          <td></td>
            </tr>
   </tbody>
-    </table>-->
+    </table>
+  </div>
+<!--
+    <cdk-virtual-scroll-viewport itemSize="4" class="scrolling-example">
+      <div *cdkVirtualFor="let bird of birds" class="item">{{bird.image}}</div>
+    </cdk-virtual-scroll-viewport> -->
 
-    <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-example">
-      <div *cdkVirtualFor="let bird of birds" class="item">{{bird.name}}</div>
-    </cdk-virtual-scroll-viewport>
+    <div class="col-md-4">
+    <div cdkDropList></div>
 
+    <div cdkDropList (cdkDropListDropped)="onDrop($event)">
+      <div class="box" *ngFor="let item of DropList" cdkDrag>{{item}}</div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4">
+      <div class="img" cdkDrag>
+          <img src="https://download.ams.birds.cornell.edu/api/v1/asset/169049481/480" alt="Bird">
+      </div>
+      <div class="img" cdkDrag>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/American_Robin_Close-Up.JPG/1024px-American_Robin_Close-Up.JPG" alt="Bird">
+      </div>
+      <div class="img" cdkDrag>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Gray_Catbird_%2817166164877%29.jpg" alt="Bird">
+      </div>
+      <div class="img" cdkDrag>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Black-capped_Chickadee_%284436797251%29.jpg" alt="Bird">
+      </div>
+      <div class="img" cdkDrag>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Common_Grackle_%2827182592494%29.jpg" alt="Bird">
+      </div>
+  </div>
+
+
+  <!-- <div cdkDropList (cdkDropListDropped)="onDrop($event)">
+    <div class="img" *ngFor="let bird of birds" cdkDrag><img src={{bird.image}} alt="Bird"></div>
+  </div> -->

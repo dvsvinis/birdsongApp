@@ -10,6 +10,8 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 })
 export class BirdListComponent implements OnInit {
   birds: Bird[];
+  DropList = ['American Robin', 'Gray Catbird', 'Common Grackle', 'Northern Cardinal', 'Black Capped Chickadee'];
+
   constructor(private birdService: BirdService) { }
 
   ngOnInit() {
@@ -17,6 +19,9 @@ export class BirdListComponent implements OnInit {
       this.birds = data;
     });
   }
-
+ onDrop(event){
+    console.log(event);
+    moveItemInArray(this.DropList, event.previousIndex, event.currentIndex);
+  }
 
 }
