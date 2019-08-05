@@ -35,11 +35,10 @@
         <div class="col-md-4">
         <div cdkDropList></div>
         <h5>Bird Name</h5>
-
-
         <div cdkDropList (cdkDropListDropped)="onDrop($event)">
           <div class="box" *ngFor="let item of DropList" cdkDrag>{{item}}</div>
         </div>
+        <button (click)="nameCompare()">Check answers</button>
       </div>
 
 

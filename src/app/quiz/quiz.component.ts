@@ -31,14 +31,13 @@ export class QuizComponent {
   onDrop(event) {
     console.log(event);
     moveItemInArray(this.DropList, event.previousIndex, event.currentIndex);
-    this.nameCompare();
   }
 
   nameCompare() {
     this.DropList.forEach((item, index) => {
       if (item !== this.listOfBirdNames[index]) {
           // raise of flag saying their answer is wrong
-          console.log("This not right");
+          console.log("Try again!");
       }
     });
   }
