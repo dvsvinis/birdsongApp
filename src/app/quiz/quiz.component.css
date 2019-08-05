@@ -1,0 +1,27 @@
+.scrolling-example{
+  height: 700px;
+  width: 400px;
+  border: 1px solid gray;
+}
+
+.item{
+  padding: 25px;
+  background: lightblue;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.box{
+  border: 1px solid blueviolet;
+  padding: 20px;
+  width: 250px;
+  background: lavender;
+  margin-bottom: 5px;
+}
+
+img {
+  border-radius: 8px;
+  height: 70px;
+}
+
