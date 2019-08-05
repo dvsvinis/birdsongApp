@@ -9,7 +9,7 @@ import {QuizComponent } from './quiz/quiz.component';
 // import { AuthGoodService } from './service/auth-good.service';
 
 const routes: Routes = [
-  { path: '', component: BirdComponent},
+  { path: '', component: BirdListComponent},
   { path: 'birdlist', component: BirdListComponent},
   { path: 'quiz', component: QuizComponent}
   // { path: 'login', component: LoginComponent },

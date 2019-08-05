@@ -28,7 +28,7 @@ import { BirdService } from './service/bird-service.service';
      LogoutComponent,
      AddBirdComponent,
      DragdropComponent,
-     QuizComponent
+     QuizComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +36,7 @@ import { BirdService } from './service/bird-service.service';
     FormsModule,
     HttpClientModule,
     DragDropModule,
-    ScrollingModule
+    ScrollingModule,
   ],
   providers: [BirdService],
   bootstrap: [AppComponent]
