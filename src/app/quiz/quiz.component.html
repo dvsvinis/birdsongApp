@@ -1,17 +1,8 @@
-<div class="container">
-    <div class="jumbotron">
-      <h1> Bird Song Quiz</h1>
-    </div>
-    <div class="panel panel-primary">
-      <div class="panel-body">
-        Identify these bird songs:
-    </div>
-  </div>
 
   <div class="container">
       <div class="panel panel-primary">
           <div class="panel-body">
-            <h2>Bird Songs</h2>
+            <h5>Identify these bird songs by dragging the bird names into the correct order:</h5>
         </div>
 
         <div class="container">
@@ -22,7 +13,7 @@
        <table border="1">
       <thead></thead>
         <tr>
-        <th>Song</th>
+            <h5>Bird Song</h5>
         </tr>
 
     <tbody>
@@ -43,6 +34,8 @@
 
         <div class="col-md-4">
         <div cdkDropList></div>
+        <h5>Bird Name</h5>
+
 
         <div cdkDropList (cdkDropListDropped)="onDrop($event)">
           <div class="box" *ngFor="let item of DropList" cdkDrag>{{item}}</div>
