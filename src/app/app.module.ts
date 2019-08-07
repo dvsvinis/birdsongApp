@@ -29,6 +29,7 @@ import { BirdService } from './service/bird-service.service';
      AddBirdComponent,
      DragdropComponent,
      QuizComponent,
+
   ],
   imports: [
     BrowserModule,

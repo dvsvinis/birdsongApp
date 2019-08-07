@@ -13,17 +13,16 @@ export class QuizComponent {
   birds: Bird[];
   DropList = ['American Robin', 'Gray Catbird', 'Common Grackle', 'Northern Cardinal', 'Black Capped Chickadee'];
   listOfBirdNames: string[];
+  showAlert: boolean = false;
 
   constructor(private birdService: BirdService) { }
 
   ngOnInit() {
     this.birdService.findAll().subscribe(data => {
-      console.log("data: " + data[0].name);
       this.birds = data;
       this.listOfBirdNames = this.birds.map(bird => {
         return bird.name;
       });
-      console.log("birds: " + this.birds[0].name);
     });
 
   }
@@ -31,15 +30,29 @@ export class QuizComponent {
   onDrop(event) {
     console.log(event);
     moveItemInArray(this.DropList, event.previousIndex, event.currentIndex);
+    if (this.DropList[event.currentIndex] === this.listOfBirdNames[event.currentIndex]) {
+      alert ('Success - this is a match!');
+      // this.showAlert = true;
+      console.log(this.showAlert);
+    } else if (this.DropList[event.currentIndex] !== this.listOfBirdNames[event.currentIndex]){
+      alert ('Try again!');
+    }
+    this.showAlert = false;
   }
 
-  nameCompare() {
-    this.DropList.forEach((item, index) => {
-      if (item !== this.listOfBirdNames[index]) {
-          // raise of flag saying their answer is wrong
-          console.log("Try again!");
-      }
-    });
-  }
+  // nameCompare() {
+  //   this.DropList.forEach((item, index) => {
+  //     if (item !== this.listOfBirdNames[index]) {
+  //     // raise of flag saying their answer is wrong
+  //       console.log('this not right');
+  //      alert('Try again!');
+  //     }
+  //      else {
+  //     alert ('Way to go!');
+  //     }
+  //   });
+
+  // }
+
 
 }

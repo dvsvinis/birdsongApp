@@ -19,7 +19,7 @@
     <tbody>
           <tr *ngFor="let bird of birds">
               <td height="70"><audio controls>
-                <source src={{bird.song1}} type="audio/mpeg" />
+                <source src={{bird.song1}} type="audio/mpeg" >
                   update your browser if you can see this and want to hear birdsongs
               </audio></td>
           </tr>
@@ -27,22 +27,24 @@
         </table>
       </div>
 
-    <!--
-        <cdk-virtual-scroll-viewport itemSize="4" class="scrolling-example">
-          <div *cdkVirtualFor="let bird of birds" class="item">{{bird.image}}</div>
-        </cdk-virtual-scroll-viewport> -->
 
-        <div class="col-md-4">
+      <div class="col-md-4">
         <div cdkDropList></div>
         <h5>Bird Name</h5>
         <div cdkDropList (cdkDropListDropped)="onDrop($event)">
           <div class="box" *ngFor="let item of DropList" cdkDrag>{{item}}</div>
         </div>
-        <button (click)="nameCompare()">Check answers</button>
       </div>
 
 
-      <div class="col-md-4">
+    <!--
+        <cdk-virtual-scroll-viewport itemSize="4" class="scrolling-example">
+          <div *cdkVirtualFor="let bird of birds" class="item">{{bird.image}}</div>
+        </cdk-virtual-scroll-viewport> -->
+
+
+
+      <!-- <div class="col-md-4">
           <div class="img" cdkDrag>
               <img src="https://download.ams.birds.cornell.edu/api/v1/asset/169049481/480" alt="Bird">
           </div>
@@ -59,6 +61,28 @@
               <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Common_Grackle_%2827182592494%29.jpg" alt="Bird">
           </div>
       </div>
+ -->
+
+  <!--
+<div *ngIf = "showAlert" >
+        <strong>Success!</strong>
+        <div class="alert alert-success" role="alert">
+          <h4 class="alert-heading">Well done!</h4>
+          <p>This is a match.</p>
+          <hr>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Success!</strong> This is a match!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      </div>-->
+
 
 
       <!-- <div cdkDropList (cdkDropListDropped)="onDrop($event)">
