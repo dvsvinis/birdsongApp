@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 export class Bird {
   constructor(
@@ -14,19 +15,22 @@ export class Bird {
   providedIn: 'root'
 })
 export class HttpClientService {
+birdsUrl: string;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+    this.birdsUrl = environment.apiUrl + 'birds';
+  }
 
   getBirds() {
     console.log('get bird list');
-    return this.httpClient.get<Bird[]>('http://localhost:8080/birdlist');
+    return this.httpClient.get<Bird[]>(environment.apiUrl + 'birdlist');
   }
 
   public deleteBird(bird) {
-    return this.httpClient.delete<Bird> ('http://localhost:8080/birds' + '/' + bird.id);
+    return this.httpClient.delete<Bird> (this.birdsUrl + '/' + bird.id);
   }
 
   public createBird(bird) {
-    return this.httpClient.post<Bird>('http://localhost:8080/birds', bird);
+    return this.httpClient.post<Bird>(this.birdsUrl, bird);
   }
 }

@@ -2,6 +2,7 @@ import { Injectable, ɵConsole } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Bird } from '../bird';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class BirdService {
@@ -9,7 +10,7 @@ export class BirdService {
   private birdsUrl: string;
 
   constructor(private http: HttpClient) {
-    this.birdsUrl = 'http://localhost:8080/birds';
+    this.birdsUrl = environment.apiUrl + 'birds';
   }
 
   public findAll(): Observable<Bird[]> {
