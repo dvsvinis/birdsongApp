@@ -1,4 +1,17 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
+# User-specific stuff
+.idea/*
+.target/*
+.DS_Store
+node_modules/*
+target/*
+*.yml
+.vscode/*
+src/main/resources/static/angularclient/node_modules/*
+
+# Generated files
+.idea/**/contentModel.xml
+dist/*
 
 # compiled output
 /dist
@@ -9,6 +22,7 @@
 
 # dependencies
 /node_modules
+node_modules
 
 # profiling files
 chrome-profiler-events.json
